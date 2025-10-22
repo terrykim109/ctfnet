@@ -16,12 +16,14 @@ const FLAG = "fundservCTF{hidden_ninja_headers}";
 app.use((req, res, next) => {
   if (req.path === "/" || req.path.startsWith("/matrix") ) {
     res.setHeader("X-CTF-Flag", FLAG);
+     res.setHeader("Access-Control-Expose-Headers", "X-CTF-Ninja");
+     
   }
   next();
 });
 
 // Serve static files (HTML, JS, CSS) from public folder
-app.use(express.static(path.join(__dirname, "public")));
+// app.use(express.static(path.join(__dirname, "public")));
 
 // Root route: serves index.html
 app.get("/", (req, res) => {
