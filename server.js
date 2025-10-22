@@ -30,6 +30,7 @@ app.get("/", (req, res) => {
 
 // API endpoint for curiosity
 app.get("/matrix", (req, res) => {
+  res.setHeader("X-CTF-Flag", FLAG);
   res.json({ message: "You hit the matrix! Check the response headers 👀" });
 });
 
