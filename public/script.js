@@ -1,5 +1,5 @@
 // script.js
-document.getElementById("check-api").addEventListener("click", async () => {
+document.getElementById("check-api")?.addEventListener("click", async () => {
   try {
     const resp = await fetch("/matrix");
     const json = await resp.json();
