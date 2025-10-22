@@ -23,7 +23,7 @@ app.use((req, res, next) => {
 });
 
 // Serve static files (HTML, JS, CSS) from public folder
-// app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "public")));
 
 // Root route: serves index.html
 app.get("/", (req, res) => {
