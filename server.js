@@ -25,12 +25,15 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // Root route: serves index.html
 app.get("/", (req, res) => {
+    res.setHeader("X-CTF-Flag", FLAG);
+  res.setHeader("Access-Control-Expose-Headers", "X-CTF-Flag");
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
 // API endpoint for curiosity
 app.get("/matrix", (req, res) => {
   res.setHeader("X-CTF-Flag", FLAG);
+  res.setHeader("Access-Control-Expose-Headers", "X-CTF-Flag");
   res.json({ message: "You hit the matrix! Check the response headers 👀" });
 });
 
