@@ -6,9 +6,15 @@ const app = express();
 const FLAG = "fundservCTF{hidden_ninja_headers}";
 
 // Middleware to add the header to main routes
+// app.use((req, res, next) => {
+//   // Only send flag header on specific routes, not assets
+//   if (req.path === "/" || req.path === "/matrix") {
+//     res.setHeader("X-CTF-Flag", FLAG);
+//   }
+//   next();
+// });
 app.use((req, res, next) => {
-  // Only send flag header on specific routes, not assets
-  if (req.path === "/" || req.path === "/matrix") {
+  if (req.path === "/" || req.path.startsWith("/matrix") ) {
     res.setHeader("X-CTF-Flag", FLAG);
   }
   next();
