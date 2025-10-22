@@ -38,7 +38,7 @@ app.get("/matrix", (req, res) => {
   res.setHeader("Cache-Control", "no-store");
   res.setHeader("X-CTF-Flag", FLAG);
   res.setHeader("Access-Control-Expose-Headers", "X-CTF-Flag");
-  res.json({ message: "You hit the matrix! Check the response headers 👀" });
+  res.json({ message: "You hit the matrix! 👀" });
 });
 
 // Optional: route that does not send flag
