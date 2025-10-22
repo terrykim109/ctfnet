@@ -1,0 +1,16 @@
+{
+  "headers": [
+    {
+      "source": "/",
+      "headers": [
+        { "key": "X-CTF-Flag", "value": "fundservCTF{hidden_ninja_headers}" }
+      ]
+    },
+    {
+      "source": "/matrix",
+      "headers": [
+        { "key": "X-CTF-Flag", "value": "fundservCTF{hidden_ninja_headers}" }
+      ]
+    }
+  ]
+}
